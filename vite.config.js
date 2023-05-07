@@ -1,33 +1,31 @@
 import {defineConfig} from 'vite'
 import vue from '@vitejs/plugin-vue'
 // import eslintPlugin from 'vite-plugin-eslint'
-import babel from "vite-babel-plugin"
+// import babel from "vite-babel-plugin"
+// import babel from 'vite-plugin-babel'
 import {quasar, transformAssetUrls} from '@quasar/vite-plugin'
-import pugPlugin from "vite-plugin-pug"
+import pugPlugin from 'vite-plugin-pug'
+
 const options = {} // FIXME: pug pretty is deprecated!
-const locals = { name: "My Pug" }
+const locals = { name: 'My Pug' }
 
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [
-		vue({template: {
+		vue({
+			template: {
 				transformAssetUrls,
 				// compilerOptions: {
 				//   isCustomElement: tag => tag === 'q-btn'
 				// }}
-			}}),
+			}
+		}),
 		quasar({
 			autoImportComponentCase: 'combined',
 			sassVariables: 'src/quasar-variables.sass',
-			plugins:[]
+			plugins: []
 		}),
 		pugPlugin(options, locals),
-		babel({
-			parserOpts: {
-			      plugins: ['decorators-legacy']
-			    }
-		}),
-
 	],
 	resolve: {
 		alias: {
