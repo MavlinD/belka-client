@@ -8,7 +8,7 @@
 		:width="300"
 	>
 		<q-scroll-area class="fit">
-<!--			<q-list padding>-->
+			<q-list padding>
 <!--				<router-link v-for="link in state.links1" :key="link.text" class="text-body1" :to="link.path">-->
 <!--					<q-item v-ripple clickable>-->
 <!--						<q-item-section avatar>-->
@@ -22,18 +22,18 @@
 
 <!--				<q-separator class="q-my-md" />-->
 
-<!--				<router-link v-for="link in state.links2" :key="link.text" :to="{name: link.path}">-->
-<!--					<q-item v-ripple clickable>-->
-<!--						<q-item-section avatar>-->
-<!--							<q-icon color="grey" :name="link.icon" />-->
-<!--						</q-item-section>-->
-<!--						<q-item-section>-->
-<!--							{{ link.text }}-->
-<!--						</q-item-section>-->
-<!--					</q-item>-->
-<!--				</router-link>-->
-<!--			</q-list>-->
-<!--			<ArticlesTree />-->
+				<router-link v-for="link in state.links" :key="link.text" :to="{name: link.path}">
+					<q-item v-ripple clickable>
+						<q-item-section avatar>
+							<q-icon color="grey" :name="link.icon" />
+						</q-item-section>
+						<q-item-section>
+							{{ link.text }}
+						</q-item-section>
+					</q-item>
+				</router-link>
+			</q-list>
+			<ArticlesTree />
 		</q-scroll-area>
 	</q-drawer>
 </template>
@@ -52,13 +52,10 @@
 	})
 
 	const state = reactive({
-		links1: [
-			{ icon: 'home', text: 'В макробанк', path: '#' },
-		],
-		links2: [
+		links: [
 			{ icon: 'home', text: 'Домой', path: 'home'},
-			{ icon: 'verified', text: 'О нас', path: 'about' },
-			{ icon: 'pages', text: 'Статьи', path: 'articles' },
+			{ icon: 'pages', text: 'Отчеты', path: 'reports' },
+			{ icon: 'verified', text: 'Ввод данных', path: 'input-data' },
 		],
 	})
 

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base href='https://bossanova.uk/templates/default/'>
+    <meta name='viewport' id="viewport" content='width=device-width,initial-scale=1,user-scalable=no' />
+    <meta name='format-detection' content = "telephone=no" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+
+    <meta itemprop="name" content="Jspreadsheet CE">
+    <meta itemprop="image" content="https://bossanova.uk/jspreadsheet/logo.png">
+    <meta itemprop="url" content="https://bossanova.uk/jspreadsheet">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Jspreadsheet CE">
+    <meta property="og:url" content="https://bossanova.uk/jspreadsheet">
+    <meta property="og:locale" content="en_GB">
+    <meta property="og:image" content="https://bossanova.uk/jspreadsheet/logo.png">
+    <meta name="google-site-verification" content="fNDemv4nALjUDIqXc7xPfHDEV24wtpD9xsEKLkTIYSk" />
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Roboto|Material+Icons" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.6.0/styles/a11y-light.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsuites/dist/jsuites.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@jsuites/css/dist/style.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@jsuites/menu/menu.min.css" type="text/css" />
+
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+</head>
+<body>
+
+<div id='required'><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jspreadsheet-ce/dist/jspreadsheet.min.css" type="text/css" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jspreadsheet-ce/dist/index.min.js"></script></div>
+
+<section class='top'>
+    <div class='row container middle'>
+        <div id="logo" class='logo'><div class='logo p6' style="display:flex">
+    <i class='material-icons small-screen-only' style='margin:6px;' onclick="document.getElementById('menu').menu.show()">menu</i>
+    <a href="/jspreadsheet/v4/"><img src="img/logo.svg"></a> <span style="position: relative; top: -15px; left: -5px;">CE</span>
+</div>
+</div>
+        <div class='column p10 big-screen-only'>
+            <a class="github-button" href="https://github.com/jspreadsheet/jexcel" data-size="large" data-show-count="true">Star</a>
+        </div>
+        <div id='search' class='search f1 center'></div>
+        <nav id='top' class='big-screen-only'><ul>
+    <li><a href="/jspreadsheet/v4/docs">Docs</a></li>
+    <li><a href="/jspreadsheet/v4/examples">Examples</a></li>
+    <li><a href="/jspreadsheet/v4/sponsors">Sponsors</a></li>
+    <li><a href="/jspreadsheet/v4/contact">Contact</a></li>
+    <button class="button main" style="margin-left: 30px;"><a href="https://jspreadsheet.com/home?utm_source=CE">PRO</a></button>
+</ul></nav>
+    </div>
+</section>
+
+<section>
+    <div class='row container'>
+        <div id='menu' class='column f1 jmenu' style="max-width: 260px;"><nav data-id="my-account">
+    <h2>Resources</h2>
+    <div>
+    <h3>Tools</h3>
+    <ul>
+        <li><a href="https://jspreadsheet.com/home?utm_source=CE">Jspreadsheet Pro</a></li>
+        <li><a href="https://intrasheets.com">Intrasheets</a></li>
+        <li><a href="https://jsuites.net/">Jsuites</a></li>
+        <li><a href="https://lemonadejs.net/">LemonadeJS</a></li>
+        <li><a href="https://github.com/jspreadsheet/ce">CE repository</a></li>
+    </ul>
+
+    <h3>Extensions</h3>
+    <ul>
+        <li><a href="https://jspreadsheet.com/products/formulas">Formulas premium</a></li>
+        <li><a href="https://jspreadsheet.com/products/forms">Forms</a></li>
+        <li><a href="https://jspreadsheet.com/products/export-to-xlsx">XLSX render</a></li>
+        <li><a href="https://jspreadsheet.com/products/import-from-xlsx">XLSX parser</a></li>
+    </ul>
+    </div>
+</nav>
+
+<nav data-id="learning-center" class="selected">
+  <h2>Learning Center</h2>
+
+  <div>
+  <h3>Documentation</h3>
+  <ul>
+    <li><a href="/jspreadsheet/v4/docs/getting-started" title="The fundamental of Jspreadsheet">Getting started</a></li>
+    <li><a href="/jspreadsheet/v4/docs/programmatically-changes" title="Control your table via javascript">Methods</a></li>
+    <li><a href="/jspreadsheet/v4/docs/events" title="Control the interaction via callbacks">Events</a></li>
+    <li><a href="/jspreadsheet/v4/docs/special-formulas" title="List of special formulas and helpers">Special formulas</a></li>
+    <li><a href="/jspreadsheet/v4/cases/themes" title="Jspreadsheet color theme editor">Themes</a></li>
+  </ul>
+
+  <h3>Other references</h3>
+  <ul>
+    <li><a href="/jspreadsheet/v4/docs/quick-reference" title="List of all possible methods and events">Quick reference</a></li>
+    <li><a href="/jspreadsheet/v4/docs/most-common-questions-and-answers" title="Most common implementation questions">FAQ</a></li>
+  </ul>
+  </div>
+</nav>
+
+<nav data-id="real-life-applications">
+  <h2>Cases</h2>
+
+  <div>
+  <h3>Examples</h3>
+  <ul>
+    <li><a href="/jspreadsheet/v4/cases/highcharts" title="Jspreadsheet and Highcharts">Highcharts</a></li>
+    <li><a href="/jspreadsheet/v4/cases/project-management" title="Project management">Project management</a></li>
+    <li><a href="/jspreadsheet/v4/cases/food-store" title="Food store">Grocery store</a></li>
+    <li><a href="/jspreadsheet/v4/cases/data-persistence" title="Data persistence">Data persistence</a></li>
+  </ul>
+  </div>
+</nav>
+
+<nav data-id="examples">
+  <h2>Examples</h2>
+
+  <div>
+  <h3>Spreadsheet data</h3>
+  <ul>
+    <li><a href="/jspreadsheet/v4/examples/create-from-table" title="Create from a HTML table">Create from a HTML table</a></li>
+    <li><a href="/jspreadsheet/v4/examples/import-data" title="Load data from CSV, JSON or XLSX">Importing data</a></li>
+    <li><a href="/jspreadsheet/v4/examples/headers" title="Header updates &amp; column dragging">Headers</a></li>
+    <li><a href="/jspreadsheet/v4/examples/nested-headers" title="Nested headers and headers update">Nested headers</a></li>
+  </ul>
+
+  <h3>Spreadsheet formulas</h3>
+  <ul>
+    <li><a href="/jspreadsheet/v4/examples/spreadsheet-formulas" title="Include formulas in your table">Formulas</a></li>
+    <li><a href="/jspreadsheet/v4/examples/footers" title="Formulas on table footer">Formulas on table footer</a></li>
+  </ul>
+
+  <h3>Spreadsheet columns</h3>
+  <ul>
+    <li><a href="/jspreadsheet/v4/examples/column-types" title="Calendar, dropdown, image, text, hidden, etc.">Column types</a></li>
+    <li><a href="/jspreadsheet/v4/examples/dropdown-and-autocomplete" title="Autocomplete, multiple and conditional">Advanced dropdown</a></li>
+    <li><a href="/jspreadsheet/v4/examples/date-and-datetime-picker" title="Advanced calendar usage">Date and datetime picker</a></li>
+    <li><a href="/jspreadsheet/v4/examples/image-upload" title="Embed images to your spreadsheet">Images</a></li>
+    <li><a href="/jspreadsheet/v4/examples/richtext-html-editor" title="HTML Editor type">Richtext column</a></li>
+  </ul>
+
+  <h3>Spreadsheet cells</h3>
+  <ul>
+    <li><a href="/jspreadsheet/v4/examples/comments" title="Get or set cell comments">Cell comments</a></li>
+    <li><a href="/jspreadsheet/v4/examples/meta-information" title="Using meta information">Meta information</a></li>
+    <li><a href="/jspreadsheet/v4/examples/readonly" title="Readonly columns">Readonly</a></li>
+  </ul>
+
+  <h3>Spreadsheet integrations</h3>
+  <ul>
+    <li><a href="/jspreadsheet/v4/examples/spreadsheet-webcomponent" title="Spreadsheet as a webcomponent">Webcomponent</a></li>
+    <li><a href="/jspreadsheet/v4/examples/react" title="Using Jspreadsheet with React">React Implementation</a></li>
+    <li><a href="/jspreadsheet/v4/examples/vue" title="Using Jspreadsheet with Vue">VUE Implementation</a></li>
+    <li><a href="/jspreadsheet/v4/examples/angular" title="Using Jspreadsheet with Angular">Angular Implementation</a></li>
+    <li><a href="/jspreadsheet/v4/examples/jquery" title="Using Jspreadsheet with Jquery">Jquery Implementation</a></li>
+  </ul>
+
+  <h3>Spreadsheet features</h3>
+  <ul>
+    <li><a href="/jspreadsheet/v4/examples/spreadsheet-toolbars" title="Enable and customize the toolbars">Custom toolbars</a></li>
+    <li><a href="/jspreadsheet/v4/examples/tabs" title="Using tabs">Using tabs</a></li>
+    <li><a href="/jspreadsheet/v4/examples/datatables" title="Search and pagination like datatables">Search and pagination</a></li>
+    <li><a href="/jspreadsheet/v4/examples/column-filters" title="Column filters">Column filters</a></li>
+    <li><a href="/jspreadsheet/v4/examples/freeze-columns" title="Freeze columns">Freeze columns</a></li>
+    <li><a href="/jspreadsheet/v4/examples/merged-cells" title="How to merge cells">Merged cells</a></li>
+    <li><a href="/jspreadsheet/v4/examples/column-dragging" title="Column dragging">Column dragging</a></li>
+    <li><a href="/jspreadsheet/v4/examples/sorting" title="Sorting the spreadsheet columns">Sorting columns</a></li>
+    <li><a href="/jspreadsheet/v4/examples/contextmenu" title="Custom contextmenu">Custom Contextmenu</a></li>
+    <li><a href="/jspreadsheet/v4/examples/lazy-loading" title="Dealing with big spreadsheets">Lazy loading</a></li>
+    <li><a href="/jspreadsheet/v4/examples/table-overflow" title="Table overflow">Table overflow</a></li>
+    <li><a href="/jspreadsheet/v4/examples/translations" title="Internationalization">Translations</a></li>
+  </ul>
+
+  <h3>Spreadsheet features</h3>
+  <ul>
+    <li><a href="/jspreadsheet/v4/examples/programmatically-updates" title="Update your table programmatically">Table Updates</a></li>
+    <li><a href="/jspreadsheet/v4/examples/table-style" title="Default CSS and programmatically style">Table Style</a></li>
+    <li><a href="/jspreadsheet/v4/examples/table-scripting" title="Customize the table using javascript">Table Scripting</a></li>
+    <li><a href="/jspreadsheet/v4/examples/events" title="Control the interaction via callbacks">Events</a></li>
+  </ul>
+  </div>
+</nav>
+
+<i class='material-icons small-screen-only close' onclick="menu()">close</i>
+
+
+<br><br>
+
+<div class="button p20" style="color: #000; width: 190px; font-size: 0.9em">
+    <h3>Jspreasheet Pro</h3>
+    <p>Create advanced applications with <a href="https://jspreadsheet.com/home?utm_source=CE">spreadsheet</a> controls.<br><br><a href="https://jspreadsheet.com/home?utm_source=CE">Learn more</a></p>
+</div>
+
+<br><br><br><br>
+        </div><div class='column f3'>
+        <div id='content'></div>
+    </div>
+    </div>
+</section>
+
+<footer id="footer">
+<div class="container p20">
+    <div class="row">
+        <div class="column f4 mr1 p20">
+            <div class="row middle">
+                <div class="column mr3">
+                    <a href="https://jspreadsheet.com/">Jspread<span style="color:#A20021;">sheet</span></a>
+                </div><div class="column f1">
+                    <ul class="links">
+                        <li><a href="/jspreadsheet/v4/contact">Contact</a>
+                        <li><a href="/jspreadsheet/v4/examples">Examples</a>
+                        <li><a href="https://github.com/jspreadsheet/ce">Github</a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="column f3 p20">
+            <div class='footer-list'>
+                <h4>Newsletter</h4>
+                <p>Tech news, tips and technical advice.</p>
+
+                <!-- Begin Mailchimp Signup Form -->
+                <div id="mc_embed_signup">
+                    <form action="https://bossanova.us20.list-manage.com/subscribe/post?u=f9b5adf8223e3d5a8f575b0bb&amp;id=37f97a936c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                        <div id="mc_embed_signup_scroll">
+                            <div class="mc-field-group">
+                                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL"> <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class='jbutton dark'>
+                            </div>
+                            <div id="mce-responses" class="clear">
+                                <div class="response" id="mce-error-response" style="display:none"></div>
+                                <div class="response" id="mce-success-response" style="display:none"></div>
+                            </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_f9b5adf8223e3d5a8f575b0bb_37f97a936c" tabindex="-1" value=""></div>
+                        </div>
+                    </form>
+                </div>
+                <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+                <!--End mc_embed_signup-->
+
+
+
+
+                <br><br>
+
+                <h4>Technical support</h4>
+                <a href='mailto:contact@jspreadsheet.com'>contact@jspreadsheet.com</a>
+            </div>
+        </div>
+        <div class="column f1 p20">
+            <div class='footer-list'>
+                <h4>Products</h4>
+                <ul>
+                    <li class="link"><a href="https://jspreadsheet.com">Jspreadsheet Pro</a></li>
+                    <li class="link"><a href="https://intrasheets.com">Intrasheets</a></li>
+                    <li class="link"><a href='https://lemonadejs.net'>LemonadeJS</a></li>
+                    <li class="link"><a href="https://bossanova.uk/jspreadsheet">Jspreadsheet CE</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</footer>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lemonadejs/dist/lemonade.min.js"></script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jsuites/dist/jsuites.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@jsuites/menu/menu.min.js"></script>
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100064619-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-100064619-1');
+</script>
+
+<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us20.list-manage.com","uuid":"f9b5adf8223e3d5a8f575b0bb","lid":"37f97a936c","uniqueMethods":true}) })</script>
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/themes.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', app);
+
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = '8d4e5889ed50695aba8dc576aa3336999032de1b';
+window.smartsupp || (function (d) {
+    var s, c, o = smartsupp = function () { o._.push(arguments) }; o._ = [];
+    s = d.getElementsByTagName('script')[0]; c = d.createElement('script');
+    c.type = 'text/javascript'; c.charset = 'utf-8'; c.async = true;
+    c.src = 'https://www.smartsuppchat.com/loader.js?'; s.parentNode.insertBefore(c, s);
+})(document);
+</script>
+</html>

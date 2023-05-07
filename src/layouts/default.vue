@@ -18,7 +18,6 @@
 
 	import {reactive} from 'vue'
 	import Header from '@/components/Header.vue'
-	import RightSidebar from '@/components/RightSidebar.vue'
 	import LeftSidebar from '@/components/LeftSidebar.vue'
 
 	const state = reactive({

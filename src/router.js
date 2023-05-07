@@ -19,6 +19,14 @@ let meta = {
 		requiresAuth: true,
 		props: true
 	},
+	reports: {
+		requiresAuth: true,
+		props: true
+	},
+	'input-data': {
+		requiresAuth: true,
+		props: true
+	},
 	articles: {
 		requiresAuth: true,
 		middleware: [getCommonData]
