@@ -96,9 +96,6 @@ devDependencies:
   '@vitejs/plugin-vue':
     specifier: ^4.2.1
     version: 4.2.1(vite@4.3.5)(vue@3.3.0-beta.4)
-  '@vue/compiler-sfc':
-    specifier: ^3.2.47
-    version: 3.2.47
   '@vue/eslint-config-typescript':
     specifier: ^11.0.3
     version: 11.0.3(eslint-plugin-vue@9.11.0)(eslint@8.40.0)(typescript@5.0.4)
@@ -1955,6 +1952,7 @@ packages:
       estree-walker: 2.0.2
       source-map: 0.6.1
     dev: true
+    optional: true
 
   /@vue/compiler-core@3.3.0-beta.4:
     resolution: {integrity: sha512-P4K3tkaAPhv9KSRnqpvPvvE8f8LORXVC0wP9b0sHOU2ooi2k3f7sNtVCMkCOsW0WA6FeZ7Ec4o0e7H9tazXqBQ==}
@@ -1970,27 +1968,13 @@ packages:
       '@vue/compiler-core': 3.2.47
       '@vue/shared': 3.2.47
     dev: true
+    optional: true
 
   /@vue/compiler-dom@3.3.0-beta.4:
     resolution: {integrity: sha512-dbMAIqJCIwQTRdDZPGYV/rXzaVr2gkIuXxty/73U4zI6SJNqA2fPZo9Qv27TbKK8PWSUEKT6iqqbxaUszf9ivw==}
     dependencies:
       '@vue/compiler-core': 3.3.0-beta.4
       '@vue/shared': 3.3.0-beta.4
-
-  /@vue/compiler-sfc@3.2.47:
-    resolution: {integrity: sha512-rog05W+2IFfxjMcFw10tM9+f7i/+FFpZJJ5XHX72NP9eC2uRD+42M3pYcQqDXVYoj74kHMSEdQ/WmCjt8JFksQ==}
-    dependencies:
-      '@babel/parser': 7.21.8
-      '@vue/compiler-core': 3.2.47
-      '@vue/compiler-dom': 3.2.47
-      '@vue/compiler-ssr': 3.2.47
-      '@vue/reactivity-transform': 3.2.47
-      '@vue/shared': 3.2.47
-      estree-walker: 2.0.2
-      magic-string: 0.25.9
-      postcss: 8.4.23
-      source-map: 0.6.1
-    dev: true
 
   /@vue/compiler-sfc@3.3.0-beta.4:
     resolution: {integrity: sha512-yL/4Sc67j6HyYBLVBaV8ZgJcufuHq4qSvKzpyzxI4G7KxVf5oTdyxJ+ZigtYw99+kwefBa8tCvkl/+wgIk0x6Q==}
@@ -2012,6 +1996,7 @@ packages:
       '@vue/compiler-dom': 3.2.47
       '@vue/shared': 3.2.47
     dev: true
+    optional: true
 
   /@vue/compiler-ssr@3.3.0-beta.4:
     resolution: {integrity: sha512-IWTlqvEkkniPV2OJKNQ3ASg/XAu4VkQoxy1cAOE4oTwh3YV6twUaLFK2MAQSlL6Z96PhhcgnrLO+l4v1F8LhZQ==}
@@ -2042,16 +2027,6 @@ packages:
       vue-eslint-parser: 9.2.1(eslint@8.40.0)
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /@vue/reactivity-transform@3.2.47:
-    resolution: {integrity: sha512-m8lGXw8rdnPVVIdIFhf0LeQ/ixyHkH5plYuS83yop5n7ggVJU+z5v0zecwEnX7fa7HNLBhh2qngJJkxpwEEmYA==}
-    dependencies:
-      '@babel/parser': 7.21.8
-      '@vue/compiler-core': 3.2.47
-      '@vue/shared': 3.2.47
-      estree-walker: 2.0.2
-      magic-string: 0.25.9
     dev: true
 
   /@vue/reactivity-transform@3.3.0-beta.4:
@@ -2104,6 +2079,7 @@ packages:
   /@vue/shared@3.2.47:
     resolution: {integrity: sha512-BHGyyGN3Q97EZx0taMQ+OLNuZcW3d37ZEVmEAyeoA9ERdGvm9Irc/0Fua8SNyOtV1w6BS4q25wbMzJujO9HIfQ==}
     dev: true
+    optional: true
 
   /@vue/shared@3.3.0-beta.4:
     resolution: {integrity: sha512-yRrdT1FUWhuLNgj3UUasmToYZ0zR0SOdmVyLa0FHIzbnn00LOiK4lZoPRELMRMnyPy6wwwWHRNmItUeWc2ZGPQ==}
@@ -4121,12 +4097,6 @@ packages:
       yallist: 4.0.0
     dev: true
 
-  /magic-string@0.25.9:
-    resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==}
-    dependencies:
-      sourcemap-codec: 1.4.8
-    dev: true
-
   /magic-string@0.30.0:
     resolution: {integrity: sha512-LA+31JYDJLs82r2ScLrlz1GjSgu66ZV518eyWT+S8VhyQn/JL0u9MeBOvQMGYiPk1DBiSN9DDMOcXvigJZaViQ==}
     engines: {node: '>=12'}
@@ -4916,11 +4886,7 @@ packages:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
     dev: true
-
-  /sourcemap-codec@1.4.8:
-    resolution: {integrity: sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==}
-    deprecated: Please use @jridgewell/sourcemap-codec instead
-    dev: true
+    optional: true
 
   /statuses@2.0.1:
     resolution: {integrity: sha512-RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==}
