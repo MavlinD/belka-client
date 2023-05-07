@@ -1,0 +1,32 @@
+{
+	"name": "client",
+	"version": "1.0.0",
+	"description": "client engine",
+	"private": true,
+	"author": "mdv",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"serve": "vite preview"
+	},
+	"dependencies": {
+		"@quasar/extras": "^1.12.1",
+		"axios": "^0.24.0",
+		"cross-env": "^7.0.3",
+		"dotenv": "^10.0.0",
+		"express": "^4.17.1",
+		"vue": "^3.2.16",
+		"vue-router": "^4.0.12",
+		"vuex": "^4"
+	},
+	"lint-staged": {
+		"*.{js,jsx,vue}": [
+			"vue-cli-service lint",
+			"git add"
+		]
+	},
+	"engines": {
+		"node": ">=14",
+		"pnpm": ">=6"
+	}
+}
