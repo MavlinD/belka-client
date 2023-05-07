@@ -1,8 +1,5 @@
 import {defineConfig} from 'vite'
 import vue from '@vitejs/plugin-vue'
-// import eslintPlugin from 'vite-plugin-eslint'
-// import babel from "vite-babel-plugin"
-// import babel from 'vite-plugin-babel'
 import {quasar, transformAssetUrls} from '@quasar/vite-plugin'
 import pugPlugin from 'vite-plugin-pug'
 
@@ -15,9 +12,6 @@ export default defineConfig({
 		vue({
 			template: {
 				transformAssetUrls,
-				// compilerOptions: {
-				//   isCustomElement: tag => tag === 'q-btn'
-				// }}
 			}
 		}),
 		quasar({
@@ -32,8 +26,11 @@ export default defineConfig({
 			'@': '/src/'
 		}
 	},
-	build: {
-		minify: true,
-	},
-
+	css: {
+		preprocessorOptions: {
+			scss: {
+				quietDeps: true,
+			},
+		},
+	}
 })
