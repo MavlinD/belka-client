@@ -36,5 +36,7 @@
 - ```python3 -m pip install --upgrade pip``` - если зависимости не устанавливаются
 - ```pm collectstatic``` - собрать статику
 - ```git rm --cached client/.bash_history``` - удалить ф-л из индекса
+- ```npm install -g sass-migrator``` - install sass migrator
+- ```sass-migrator division 'node_modules/**/*.sass'``` - fix sass warning
 
 ### [Tests & Scripts](./README-TESTS.md)

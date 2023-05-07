@@ -32,5 +32,8 @@ export default defineConfig({
 				quietDeps: true,
 			},
 		},
+	},
+	server:{
+		port:8080
 	}
 })
