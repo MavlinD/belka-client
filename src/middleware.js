@@ -11,13 +11,16 @@ let isReq = false
  * @returns {boolean}
  */
 export async function isAuth() {
-	let token = Cookies.get(VITE_token_name)
+	let token = LocalStorage.getItem(VITE_token_name)
 	if (token && LocalStorage.getItem('user')) return true
+	console.log('isAuth')
+	console.log(LocalStorage.getItem('user'))
+	// debugger
 	if (token && !isReq) {
 		let transport = new Transport()
 		transport.authorize()
 		isReq = true
-		let resp = await transport.get('user')
+		let resp = await transport.get('me')
 		isReq = false
 		// console.log(resp)
 		if (resp.status === 200) {
@@ -46,11 +49,12 @@ export function isStaff() {
 export async function canUserAccess(to, from) {
 	// console.log(to)
 	// console.log(from)
+	// console.log(to.meta)
 	if (to.meta.requiresAuth) {
 		return await isAuth()
 	}
 	if (to.meta.requiresStaff) {
-		// console.log(isStaff())
+		console.log(isStaff())
 		return isStaff()
 	}
 	return to.name === 'login'
@@ -79,8 +83,8 @@ export function middlewarePipeline(context, middleware, index = 0) {
  * @returns {Promise<void>}
  */
 export const getCommonData = async ({ store }) => {
-	await store.dispatch('categories/fetchCategories')
-	await store.dispatch('articles/fetchArticles')
+	// await store.dispatch('categories/fetchCategories')
+	// await store.dispatch('articles/fetchArticles')
 }
 
 /**
@@ -98,6 +102,6 @@ export const log = ({ to, from }) => {
  * @param title str
  */
 export const setTitle = title => {
-	const brand = 'FAQ Макробанк'
+	const brand = 'Тестовое задание'
 	document.title = `${title ? title : brand}`
 }

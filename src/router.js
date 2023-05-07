@@ -9,6 +9,7 @@ const pages = import.meta.glob('./pages/auto/*.vue')
 let meta = {
 	home: {
 		requiresAuth: true,
+		// requiresStaff: true,
 		middleware: [getCommonData]
 	},
 	about: {
@@ -99,11 +100,11 @@ export function routerGuard(router, store) {
 		const canAccess = await canUserAccess(to, from)
 
 		if (canAccess) {
-			// console.log('can access')
+			console.log('can access')
 			middlewarePipeline(context, middleware)
 			next()
 		} else {
-			// console.log('cant access')
+			console.log('cant access')
 			// редиректим на стр логина если адрес требует авторизации
 			next({ name: 'login', query: { from: to.fullPath } })
 		}

@@ -1,4 +1,4 @@
-import {Cookies, LoadingBar} from "quasar"
+import {Cookies, LoadingBar, LocalStorage} from "quasar"
 import axios from "axios"
 import {trycatch} from '@/javascript-decorators'
 import {myNotify} from '@/components/basis'
@@ -10,20 +10,26 @@ const {VITE_token_name, VITE_api_server_name, VITE_api_ext_port} = import.meta.e
  */
 export class Transport {
 
-	token = Cookies.get(String(VITE_token_name))
-
 	transport = axios.create({
-		baseURL: `http://${VITE_api_server_name}:${VITE_api_ext_port}/api/`,
+		baseURL: `http://${VITE_api_server_name}:${VITE_api_ext_port}/api/v2`,
 		headers: {
 			'Content-Type': 'application/json',
 		},
 	})
 
+	get token(){
+		let tokenPair = LocalStorage.getItem(String(VITE_token_name))
+		if (tokenPair){
+			return tokenPair?.['access_token']
+		}
+	}
+
 	/**
 	 * авторизует, запросы PUT, PATCH, DELETE авторизованы по умолчанию
 	 */
 	authorize() {
-		this.transport.defaults.headers['Authorization'] = `token ${this.token}`
+		// console.log(this.token)
+		this.transport.defaults.headers['Authorization'] = `Bearer ${this.token}`
 	}
 
 	before() {

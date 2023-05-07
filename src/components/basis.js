@@ -8,8 +8,9 @@ export function goToArticle(router, slug) {
 
 export const logout = () => {
 	// console.log('remove ' + VITE_token_name)
-	Cookies.remove(VITE_token_name, { path: '/' })
+	// Cookies.remove(VITE_token_name, { path: '/' })
 	LocalStorage.remove('user')
+	LocalStorage.remove(VITE_token_name)
 	document.location.reload()
 }
 

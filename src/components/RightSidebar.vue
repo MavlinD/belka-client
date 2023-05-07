@@ -8,28 +8,28 @@
 		 :width="300"
 	>
 		<q-scroll-area class="fit">
-			<q-list padding>
-				<q-item v-for="link in state.links1" :key="link.text" v-ripple clickable>
-					<q-item-section avatar>
-						<q-icon color="grey" :name="link.icon"/>
-					</q-item-section>
-					<q-item-section>
-						<a :href="link.path" target="_blank">{{ link.text }}</a>
-					</q-item-section>
-				</q-item>
+<!--			<q-list padding>-->
+<!--				<q-item v-for="link in state.links1" :key="link.text" v-ripple clickable>-->
+<!--					<q-item-section avatar>-->
+<!--						<q-icon color="grey" :name="link.icon"/>-->
+<!--					</q-item-section>-->
+<!--					<q-item-section>-->
+<!--						<a :href="link.path" target="_blank">{{ link.text }}</a>-->
+<!--					</q-item-section>-->
+<!--				</q-item>-->
 
-				<q-separator class="q-my-md"/>
-				<template v-for="link in state.links2" :key="link.text">
-				<q-item v-if="link.access()"  v-ripple clickable>
-						<q-item-section avatar>
-							<q-icon color="grey" :name="link.icon"/>
-						</q-item-section>
-						<q-item-section>
-							<a :href="link.path" target="_blank">{{ link.text }}</a>
-						</q-item-section>
-				</q-item>
-				</template>
-			</q-list>
+<!--				<q-separator class="q-my-md"/>-->
+<!--				<template v-for="link in state.links2" :key="link.text">-->
+<!--				<q-item v-if="link.access()"  v-ripple clickable>-->
+<!--						<q-item-section avatar>-->
+<!--							<q-icon color="grey" :name="link.icon"/>-->
+<!--						</q-item-section>-->
+<!--						<q-item-section>-->
+<!--							<a :href="link.path" target="_blank">{{ link.text }}</a>-->
+<!--						</q-item-section>-->
+<!--				</q-item>-->
+<!--				</template>-->
+<!--			</q-list>-->
 		</q-scroll-area>
 	</q-drawer>
 </template>

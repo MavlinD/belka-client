@@ -62,7 +62,8 @@
 
 <script setup>
 	import {ref, reactive, onMounted} from 'vue'
-	import {useQuasar} from 'quasar'
+	import {LocalStorage, useQuasar} from 'quasar'
+
 	const $q = useQuasar()
 	import {useRouter, useRoute} from 'vue-router'
 
@@ -112,11 +113,17 @@
 		const options = {
 			headers: { 'content-type': 'application/x-www-form-urlencoded' },
 		}
-		let req = await transport.post('v2/auth/token-obtain', cred, options)
+		let req = await transport.post('/auth/token-obtain', cred, options)
 
 		let resp = req.data
-		$q.cookies.set(VITE_token_name, resp.key, { path: '/', expires: 10 }) // in 10 days
-		$q.localStorage.set('user', resp)
+		// console.log(resp)
+		$q.localStorage.set(String(VITE_token_name), resp)
+		transport.authorize()
+		resp = await transport.get('me')
+		// console.log(route.query.from)
+		$q.localStorage.set('user', resp.data)
+		console.log(LocalStorage.getItem('user'))
+		// order important !!!
 		await router.replace({ path: String(route.query.from) })
 
 	}
@@ -127,17 +134,17 @@
 	}
 
 	onMounted(async () => {
-		let token = $q.cookies.get(VITE_token_name)
-		if (token) {
-			let transport = new Transport()
-			transport.authorize()
-			let resp = await transport.get('user')
-			// console.log(resp)
-			if (resp.status === 200) {
-				$q.localStorage.set('user', resp.data)
-				await router.replace({ path: String(route.query.from) })
-			}
-		}
+		// let token = $q.localStorage.getItem(VITE_token_name)
+		// if (token) {
+		// 	let transport = new Transport()
+		// 	transport.authorize()
+		// 	let resp = await transport.get('me')
+		// 	// console.log(resp)
+		// 	if (resp.status === 200) {
+		// 		$q.localStorage.set('user', resp.data)
+		// 		await router.replace({ path: String(route.query.from) })
+		// 	}
+		// }
 		form.value = true
 	})
 

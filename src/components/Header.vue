@@ -12,7 +12,7 @@
 			/>
 			<router-link :to="{name:'home'}" class="text-decoration-none">
 				<q-btn v-if="$q.screen.gt.xs" flat no-caps no-wrap class="q-ml-xs">
-					<q-icon name="support" color="accent" size="28px" />
+					<q-icon name="star_rate" color="grey" size="28px" />
 					<q-toolbar-title shrink class="text-weight-bold">
 						{{VITE_app_name}}
 					</q-toolbar-title>
@@ -21,29 +21,10 @@
 			<q-space />
 			<q-space />
 
-			<div class="YL__toolbar-input-container row no-wrap">
-				<GlobalEvents @keyup.ctrl.enter="searchFocus" />
-				<q-input ref="search_field" v-model="search" dense outlined square
-					placeholder="Поиск <Enter>" class="bg-white col" clearable
-					@keypress.enter="filter"
-				>
-					<template #append>
-						<span class="text-body2">ctrl + </span><q-icon name="keyboard_return" size="xs" />
-					</template>
-				</q-input>
-				<q-btn class="YL__toolbar-input-btn" color="grey-3" text-color="grey-8"
-						 icon="search" :disable="search?.length < 3 || !search" @click="filter"
-					unelevated
-				/>
-			</div>
-
 			<q-space />
 			<q-space />
 			<q-space />
 			<div class="q-gutter-sm row items-center no-wrap">
-				<q-btn v-if="$q.screen.gt.sm && isStaff()" round dense flat color="grey-8" :icon="fasPlusCircle" :to="{name:'article-add'}">
-					<q-tooltip>Добавить статью</q-tooltip>
-				</q-btn>
 				<q-btn dense flat no-wrap>
 					<q-avatar rounded size="25px">
 						<img src="https://cdn.quasar.dev/img/boy-avatar.png">
@@ -69,15 +50,15 @@
 					</q-menu>
 				</q-btn>
 			</div>
-			<q-btn
-				v-if="rightSidebar"
-				flat
-				dense
-				round
-				aria-label="Menu"
-				icon="menu"
-				@click="$emit('toggle-right')"
-			/>
+<!--			<q-btn-->
+<!--				v-if="rightSidebar"-->
+<!--				flat-->
+<!--				dense-->
+<!--				round-->
+<!--				aria-label="Menu"-->
+<!--				icon="menu"-->
+<!--				@click="$emit('toggle-right')"-->
+<!--			/>-->
 		</q-toolbar>
 	</q-header>
 </template>
@@ -112,16 +93,5 @@
 	const user = computed({
 		get: () => $q.localStorage.getItem('user'),
 	})
-
-	let search_field=ref()
-
-	function searchFocus(){
-		search_field.value.focus()
-	}
-
-	let filter = async () => {
-		await store.dispatch('articles/filterArticles', search.value)
-		await router.push({name:'search', query:{q: search.value}})
-	}
 
 </script>

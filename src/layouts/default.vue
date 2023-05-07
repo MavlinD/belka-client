@@ -11,9 +11,6 @@
 				<slot />
 			</q-page>
 		</q-page-container>
-		<slot name="rightSidebar" :is-open="state.rightDrawerOpen">
-			<right-sidebar :is-open="state.rightDrawerOpen" />
-		</slot>
 	</q-layout>
 </template>
 
