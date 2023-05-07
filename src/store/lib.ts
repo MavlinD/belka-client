@@ -4,6 +4,7 @@ import {trycatch} from '@/javascript-decorators'
 import {myNotify} from '@/components/basis'
 
 const {VITE_token_name, VITE_api_server_name, VITE_api_ext_port} = import.meta.env
+
 /**
  * примесь всех экшен классов стора
  */
@@ -21,20 +22,20 @@ export class Transport {
 	/**
 	 * авторизует, запросы PUT, PATCH, DELETE авторизованы по умолчанию
 	 */
-	authorize(){
+	authorize() {
 		this.transport.defaults.headers['Authorization'] = `token ${this.token}`
 	}
 
-	before(){
+	before() {
 		LoadingBar.start()
 	}
 
-	after(){
+	after() {
 		LoadingBar.stop()
 	}
 
 	@trycatch(myNotify)
-	async get(arg){
+	async get(arg) {
 		// console.log(arg)
 		this.before()
 		let resp = await this.transport.get(arg)
@@ -43,16 +44,16 @@ export class Transport {
 	}
 
 	@trycatch(myNotify)
-	async post(arg, params){
-		// console.log(arg)
+	async post(arg, data, params) {
+		// console.log(params)
 		this.before()
-		let resp = await this.transport.post(arg, params)
+		let resp = await this.transport.post(arg, data, params)
 		this.after()
 		return resp
 	}
 
 	@trycatch(myNotify)
-	async put(arg, params){
+	async put(arg, params) {
 		// console.log(arg)
 		// console.log(params)
 		this.authorize()
@@ -63,7 +64,7 @@ export class Transport {
 	}
 
 	@trycatch(myNotify)
-	async patch(arg, params){
+	async patch(arg, params) {
 		// console.log(arg)
 		// console.log(params)
 		this.authorize()
@@ -74,7 +75,7 @@ export class Transport {
 	}
 
 	@trycatch(myNotify)
-	async delete(arg){
+	async delete(arg) {
 		// console.log(arg)
 		this.authorize()
 		this.before()

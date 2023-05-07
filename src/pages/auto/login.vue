@@ -41,14 +41,14 @@
 								</template>
 							</q-input>
 
-								<q-btn
-									 type="submit"
-									 unelevated
-									 size="lg"
-									 color="secondary"
-									 class="full-width text-white q-mt-lg"
-									 label="Вход"
-								/>
+							<q-btn
+								 type="submit"
+								 unelevated
+								 size="lg"
+								 color="secondary"
+								 class="full-width text-white q-mt-lg"
+								 label="Вход"
+							/>
 
 						</q-form>
 					</q-card-section>
@@ -63,7 +63,6 @@
 <script setup>
 	import {ref, reactive, onMounted} from 'vue'
 	import {useQuasar} from 'quasar'
-
 	const $q = useQuasar()
 	import {useRouter, useRoute} from 'vue-router'
 
@@ -92,7 +91,7 @@
 	setTitle(`Вход`)
 
 	let required = (val) => (val && val.length > 0 || 'Поле должно быть заполнено')
-	let short = (val) => (val && val.length > 3 || 'Значение слишком короткое')
+	let short = (val) => (val && val.length > 2 || 'Значение слишком короткое')
 
 	let username = ref(0)
 	let password = ref(0)
@@ -106,11 +105,15 @@
 		}
 
 		let transport = new Transport()
-		let req = await transport.post('rest-auth/login/', {
-				 username: state.username,
-				 password: state.password,
-			 }
-		)
+		let cred = {
+			username: state.username,
+			password: state.password,
+		}
+		const options = {
+			headers: { 'content-type': 'application/x-www-form-urlencoded' },
+		}
+		let req = await transport.post('v2/auth/token-obtain', cred, options)
+
 		let resp = req.data
 		$q.cookies.set(VITE_token_name, resp.key, { path: '/', expires: 10 }) // in 10 days
 		$q.localStorage.set('user', resp)

@@ -46,8 +46,3 @@ app.component('GlobalEvents', GlobalEvents)
 router.isReady().then(() => {
 	app.mount('#app')
 })
-
-// todo
-/**
- * добавить черновик для статей
- */
