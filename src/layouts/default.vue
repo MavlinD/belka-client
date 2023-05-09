@@ -1,5 +1,5 @@
 <template>
-	<q-layout view="hHh LpR fFf" class="bg-grey-1">
+	<q-layout view="hhh lpr fff" class="bg-grey-1" style="width: 70%; margin: 0 auto;">
 		<slot name="header">
 			<Header @toggle-left="toggleLeftDrawer" @toggle-right="toggleRightDrawer" />
 		</slot>
@@ -36,6 +36,14 @@
 </script>
 
 <style lang="scss">
+	//.q-layout{
+	//	//max-width: 1000px
+	////}
+	////.page-wrapper {
+	////  max-width: 1000px;
+	//  margin-left: auto;
+	//  margin-right: auto;
+	//}
 	.YL {
 		&__toolbar-input-container {
 			min-width: 100px;
