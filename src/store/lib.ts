@@ -50,6 +50,15 @@ export class Transport {
 	}
 
 	@trycatch(myNotify)
+	async all(arg) {
+		// console.log(arg)
+		this.before()
+		let resp = await this.transport.all(arg)
+		this.after()
+		return resp
+	}
+
+	@trycatch(myNotify)
 	async post(arg, data, params) {
 		// console.log(params)
 		this.before()

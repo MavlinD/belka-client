@@ -114,7 +114,6 @@
 			headers: { 'content-type': 'application/x-www-form-urlencoded' },
 		}
 		let req = await transport.post('/auth/token-obtain', cred, options)
-
 		let resp = req.data
 		// console.log(resp)
 		$q.localStorage.set(String(VITE_token_name), resp)
@@ -134,17 +133,6 @@
 	}
 
 	onMounted(async () => {
-		// let token = $q.localStorage.getItem(VITE_token_name)
-		// if (token) {
-		// 	let transport = new Transport()
-		// 	transport.authorize()
-		// 	let resp = await transport.get('me')
-		// 	// console.log(resp)
-		// 	if (resp.status === 200) {
-		// 		$q.localStorage.set('user', resp.data)
-		// 		await router.replace({ path: String(route.query.from) })
-		// 	}
-		// }
 		form.value = true
 	})
 
