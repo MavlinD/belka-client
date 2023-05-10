@@ -1,14 +1,14 @@
 <template>
-	<q-layout view="hhh lpr fff" class="bg-grey-1" style="width: 70%; margin: 0 auto;">
+	<q-layout view="hhh lpr fff" class="bg-grey-1">
 		<slot name="header">
-			<Header @toggle-left="toggleLeftDrawer" @toggle-right="toggleRightDrawer" />
+			<Header @toggle-left="toggleLeftDrawer" @toggle-right="toggleRightDrawer"/>
 		</slot>
 		<slot name="leftSidebar">
-			<left-sidebar :is-open="state.leftDrawerOpen" />
+			<left-sidebar :is-open="state.leftDrawerOpen"/>
 		</slot>
 		<q-page-container>
 			<q-page class="q-pt-sm">
-				<slot />
+				<slot/>
 			</q-page>
 		</q-page-container>
 	</q-layout>
@@ -36,14 +36,22 @@
 </script>
 
 <style lang="scss">
-	//.q-layout{
-	//	//max-width: 1000px
-	////}
-	////.page-wrapper {
-	////  max-width: 1000px;
-	//  margin-left: auto;
-	//  margin-right: auto;
-	//}
+	.q-layout {
+		margin: 0 auto;
+	}
+
+	body.screen--xl {
+		.q-layout {
+			width: 70%;
+		}
+	}
+
+	body.screen--lg {
+		.q-layout {
+			width: 80%;
+		}
+	}
+
 	.YL {
 		&__toolbar-input-container {
 			min-width: 100px;

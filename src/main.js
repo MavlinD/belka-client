@@ -16,7 +16,7 @@ import '@quasar/extras/animate/fadeOut.css'
 import 'quasar/src/css/index.sass'
 import App from './App.vue'
 import 'moment/locale/ru'
-import { GlobalEvents } from 'vue-global-events'
+import {GlobalEvents} from 'vue-global-events'
 
 const app = createApp(App)
 
@@ -30,7 +30,10 @@ app.use(Quasar, {
 	},
 	config: {
 		loadingBar: {},
-		notify: { /* look at QuasarConfOptions from the API card */ }
+		notify: { /* look at QuasarConfOptions from the API card */ },
+		screen: {
+			bodyClasses: true
+		}
 	},
 	lang: quasarLang,
 })
