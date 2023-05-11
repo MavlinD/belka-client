@@ -2,6 +2,14 @@ version: "3.9"
 
 services:
 
+  # сервис для сборки проекта на хостинге
+  jsm:
+    profiles: [ jsm ]
+    extends:
+      service: jsm
+      file: jsm/docker-compose.yml
+    env_file: [ .env.production ]
+
   web:
     profiles: [ web ]
     build: ./nginx
@@ -12,7 +20,7 @@ services:
     environment:
       - app_int_port
     ports:
-        # публикация фронтенда
+      # публикация фронтенда
       - ${app_ext_port:-8080}:${app_int_port:-8080}
 
     networks:
@@ -36,11 +44,6 @@ services:
       - type: bind
         source: ./dist
         target: /home/appuser/src/app/dist
-
-        # папка с зависимостями
-      - type: bind
-        source: ./node_modules
-        target: /home/appuser/src/app/node_modules
 
 networks:
   compose-net:

@@ -46,3 +46,4 @@ temp
 .bash_history
 dist
 *off*
+.pnpm-store

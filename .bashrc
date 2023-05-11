@@ -74,5 +74,5 @@ if [ $UID -ne 0 ]; then
 fi
 
 # имя пользователя можно установить в докер-композе
-appuser="${appuser:-appuser}"
+appuser="${appuser:-node}"
 export PROMPT_COMMAND='history -a' && export HISTFILE=/home/"$appuser"/.bash_history
