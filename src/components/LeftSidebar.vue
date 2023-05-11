@@ -14,7 +14,7 @@
 						<q-icon color="grey" name="api"/>
 					</q-item-section>
 					<q-item-section>
-						<a :href="`http://${VITE_api_server_name}`" target="_blank">OpenAPI backend</a>
+						<a :href="`http://${VITE_api_server_name}/api/docs`" target="_blank">OpenAPI backend</a>
 					</q-item-section>
 				</q-item>
 
@@ -23,7 +23,7 @@
 						<q-icon color="grey" name="account_circle"/>
 					</q-item-section>
 					<q-item-section>
-						<a :href="`http://${VITE_api_server_name}`" target="_blank">Admin panel</a>
+						<a :href="`http://${VITE_api_server_name}/django/admin`" target="_blank">Admin panel</a>
 					</q-item-section>
 				</q-item>
 
