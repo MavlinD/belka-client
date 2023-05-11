@@ -1,5 +1,5 @@
 import {createRouter, createWebHistory} from 'vue-router'
-import {middlewarePipeline, canUserAccess, getCommonData} from '@/middleware'
+import {middlewarePipeline, canUserAccess} from '@/middleware'
 
 // https://vitejs.dev/guide/features.html#glob-import
 // все компоненты в папке pages/auto создают автоматические маршруты
@@ -9,15 +9,10 @@ const pages = import.meta.glob('./pages/auto/*.vue')
 let meta = {
 	home: {
 		requiresAuth: true,
-		// requiresStaff: true,
-		middleware: [getCommonData]
+		middleware: []
 	},
 	about: {
 		requiresAuth: true,
-	},
-	search: {
-		requiresAuth: true,
-		props: true
 	},
 	reports: {
 		requiresAuth: true,
@@ -26,10 +21,6 @@ let meta = {
 	'input-data': {
 		requiresAuth: true,
 		props: true
-	},
-	articles: {
-		requiresAuth: true,
-		middleware: [getCommonData]
 	},
 }
 
