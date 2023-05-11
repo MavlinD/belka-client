@@ -4,6 +4,8 @@
 			<h2 class="q-ml-xl text-primary">Отчеты</h2>
 			<q-form class="q-px-sm q-pt-xl">
 
+				<p class="q-ml-xl q-mt-md text-primary">Список периодов формируется на основе введенных
+					данных.</p>
 				<q-select v-model="dataPeriod" :options="store.state.periodOptions"
 							 label="Период регистрации"/>
 
@@ -11,12 +13,14 @@
 					 unelevated
 					 size="lg"
 					 color="secondary"
-					 class="full-width text-white q-mt-lg"
+					 class=" text-white q-mt-lg"
 					 label="Отчет"
 					 @click="getReport"
 				/>
 
 			</q-form>
+
+			<p class="q-ml-xl q-mt-md text-primary">Данные выводятся для текущего пользователя.</p>
 
 			<div class="q-pa-md">
 				<q-table
@@ -37,7 +41,7 @@
 
 	import Layout from '@/layouts/default.vue'
 	import {setTitle} from '@/middleware'
-	import {computed, onMounted, reactive, ref} from 'vue'
+	import { onMounted, ref} from 'vue'
 	import {Transport} from '@/store/lib'
 	import moment from 'moment'
 	import {useStore} from 'vuex'
@@ -87,35 +91,11 @@
 		},
 	]
 
-	// defineProps({
-	// 	periodOptions: Array
-	// })
-
-	// const setPeriod = async (arg, val) => {
-	// 	console.log(arg)
-	// 	console.log(val)
-	// 	dataPeriod = arg
-	// }
-
-	let options = ref([])
 	let dataPeriod = ref(null)
-	let indicators = ref(null)
 
 	onMounted(async () => {
 		await store.dispatch('getPeriods')
-
-		// dataPeriod = selectedPeriod(store)()['value']
-		console.log(dataPeriod)
 	})
-
-	// let dataPeriod = computed(selectedPeriod(store))
-	// let dataPeriod = computed(() => store.state.selectedPeriod)
-	// let categoryBrCrumb = computed(brCrumbs(store))
-
-
-	const setDateTime = (arg) => {
-		return moment(arg, 'DD.MM.YYYY hh:mm').format('YYYY-MM-DD[T]hh:mm')
-	}
 
 	const getDateTime = (arg) => {
 		return moment(arg, 'YYYY-MM-DD[T]hh:mm')
