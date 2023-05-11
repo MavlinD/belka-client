@@ -50,34 +50,18 @@
 					</q-menu>
 				</q-btn>
 			</div>
-<!--			<q-btn-->
-<!--				v-if="rightSidebar"-->
-<!--				flat-->
-<!--				dense-->
-<!--				round-->
-<!--				aria-label="Menu"-->
-<!--				icon="menu"-->
-<!--				@click="$emit('toggle-right')"-->
-<!--			/>-->
 		</q-toolbar>
 	</q-header>
 </template>
 
 <script setup>
-	import {computed, ref} from 'vue'
+	import {computed} from 'vue'
 	import {useStore} from 'vuex'
-	import {fasPlusCircle} from '@quasar/extras/fontawesome-v5'
-	import {useQuasar} from 'quasar'
 	import {logout} from '@/components/basis'
-	import {isStaff} from '@/middleware'
-	import {useRouter} from 'vue-router'
 
 	const { VITE_app_name } = import.meta.env
 
-	let router = useRouter()
 	let store=useStore()
-	const $q = useQuasar()
-	const search = ref(router.currentRoute?.value?.query?.q)
 
 	defineProps({
 		leftSidebar: {

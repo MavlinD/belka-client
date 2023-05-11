@@ -40,7 +40,6 @@
 					</q-item>
 				</router-link>
 			</q-list>
-			<ArticlesTree/>
 		</q-scroll-area>
 	</q-drawer>
 </template>
@@ -48,7 +47,6 @@
 <script setup>
 	import { reactive} from 'vue'
 	import {useStore} from 'vuex'
-	import ArticlesTree from '@/components/ArticlesTree.vue'
 
 	const { VITE_api_server_name } = import.meta.env
 
