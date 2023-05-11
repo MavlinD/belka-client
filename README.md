@@ -1,15 +1,13 @@
-## HELP Service
+## Сервис регистрации выбросов ВВ
 
 #### Использует
 
-- Django 3
-- django-rest-framework (RESTFull API)
-- django-rest-auth (REST-AUTH-API)
-- django-rest-framework-simplejwt (JWT)
+- Django 4
+- FastAPI
 - [Vue 3 & Composition API](https://v3.ru.vuejs.org/ru/guide/composition-api-introduction.html)
 - [Quasar](https://quasar.dev/)
 - Vite & Rollback
-- Nginx & [Gunicorn](https://gunicorn.org/)
+- Nginx & [Gunicorn](https://gunicorn.org/) & Uvicorn
 
 #### Deploy
 
@@ -29,14 +27,4 @@
 #### Docker
 
 - код работает в двух контейнерах
-- данные (БД, загружаемые изображения) вынесены в папку /dbs
-
-### Сервисные команды
-
-- ```python3 -m pip install --upgrade pip``` - если зависимости не устанавливаются
-- ```pm collectstatic``` - собрать статику
-- ```git rm --cached client/.bash_history``` - удалить ф-л из индекса
-- ```npm install -g sass-migrator``` - install sass migrator
-- ```sass-migrator division 'node_modules/**/*.sass'``` - fix sass warning
-
-### [Tests & Scripts](./README-TESTS.md)
+- данные БД вынесены в папку /dbs

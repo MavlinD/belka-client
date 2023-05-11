@@ -42,6 +42,7 @@ dist-ssr
 *.local
 temp
 *temp*
+!*template
 .bash_history
 dist
 *off*

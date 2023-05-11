@@ -1,10 +1,6 @@
 import {defineConfig} from 'vite'
 import vue from '@vitejs/plugin-vue'
 import {quasar, transformAssetUrls} from '@quasar/vite-plugin'
-import pugPlugin from 'vite-plugin-pug'
-
-const options = {} // FIXME: pug pretty is deprecated!
-const locals = { name: 'My Pug' }
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -19,7 +15,6 @@ export default defineConfig({
 			sassVariables: 'src/quasar-variables.sass',
 			plugins: []
 		}),
-		pugPlugin(options, locals),
 	],
 	resolve: {
 		alias: {
@@ -36,5 +31,5 @@ export default defineConfig({
 	server:{
 		port:8080,
 		cors:true
-	}
+	},
 })

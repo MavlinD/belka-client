@@ -1,4 +1,4 @@
-import {Cookies, LoadingBar, LocalStorage} from "quasar"
+import {LoadingBar, LocalStorage} from "quasar"
 import axios from "axios"
 import {trycatch} from '@/javascript-decorators'
 import {myNotify} from '@/components/basis'
@@ -28,7 +28,6 @@ export class Transport {
 	 * авторизует, запросы PUT, PATCH, DELETE авторизованы по умолчанию
 	 */
 	authorize() {
-		// console.log(this.token)
 		this.transport.defaults.headers['Authorization'] = `Bearer ${this.token}`
 	}
 
@@ -42,7 +41,6 @@ export class Transport {
 
 	@trycatch(myNotify)
 	async get(url, arg) {
-		// console.log(arg)
 		this.before()
 		let resp = await this.transport.get(url, arg)
 		this.after()
@@ -50,17 +48,7 @@ export class Transport {
 	}
 
 	@trycatch(myNotify)
-	async all(arg) {
-		// console.log(arg)
-		this.before()
-		let resp = await this.transport.all(arg)
-		this.after()
-		return resp
-	}
-
-	@trycatch(myNotify)
 	async post(arg, data, params) {
-		// console.log(params)
 		this.before()
 		let resp = await this.transport.post(arg, data, params)
 		this.after()
@@ -69,8 +57,6 @@ export class Transport {
 
 	@trycatch(myNotify)
 	async put(arg, params) {
-		// console.log(arg)
-		// console.log(params)
 		this.authorize()
 		this.before()
 		let resp = await this.transport.put(arg, params)
@@ -80,8 +66,6 @@ export class Transport {
 
 	@trycatch(myNotify)
 	async patch(arg, params) {
-		// console.log(arg)
-		// console.log(params)
 		this.authorize()
 		this.before()
 		let resp = await this.transport.patch(arg, params)
@@ -91,7 +75,6 @@ export class Transport {
 
 	@trycatch(myNotify)
 	async delete(arg) {
-		// console.log(arg)
 		this.authorize()
 		this.before()
 		let resp = await this.transport.delete(arg)
