@@ -1,4 +1,4 @@
-import {LocalStorage, Cookies} from 'quasar'
+import {LocalStorage} from 'quasar'
 import {Transport} from '@/store/lib'
 
 const { VITE_token_name } = import.meta.env
@@ -13,16 +13,12 @@ let isReq = false
 export async function isAuth() {
 	let token = LocalStorage.getItem(VITE_token_name)
 	if (token && LocalStorage.getItem('user')) return true
-	console.log('isAuth')
-	console.log(LocalStorage.getItem('user'))
-	// debugger
 	if (token && !isReq) {
 		let transport = new Transport()
 		transport.authorize()
 		isReq = true
 		let resp = await transport.get('me')
 		isReq = false
-		// console.log(resp)
 		if (resp.status === 200) {
 			LocalStorage.set('user', resp.data)
 			return true
@@ -36,7 +32,6 @@ export async function isAuth() {
  * @returns {boolean}
  */
 export function isStaff() {
-	// console.log(LocalStorage.getItem('user')?.is_staff)
 	return LocalStorage.getItem('user')?.is_staff
 }
 
@@ -47,14 +42,10 @@ export function isStaff() {
  * @returns Boolean
  */
 export async function canUserAccess(to, from) {
-	// console.log(to)
-	// console.log(from)
-	// console.log(to.meta)
 	if (to.meta.requiresAuth) {
 		return await isAuth()
 	}
 	if (to.meta.requiresStaff) {
-		console.log(isStaff())
 		return isStaff()
 	}
 	return to.name === 'login'
@@ -75,16 +66,6 @@ export function middlewarePipeline(context, middleware, index = 0) {
 	middlewarePipeline(
 		context, middleware, index + 1
 	)
-}
-
-/**
- * получает стартовые данные приложения
- * @param store
- * @returns {Promise<void>}
- */
-export const getCommonData = async ({ store }) => {
-	// await store.dispatch('categories/fetchCategories')
-	// await store.dispatch('articles/fetchArticles')
 }
 
 /**

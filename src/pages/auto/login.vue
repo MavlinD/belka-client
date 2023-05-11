@@ -58,11 +58,9 @@
 	</div>
 </template>
 
-<!--https://codepen.io/greyufo/pen/eYZejPz-->
-
 <script setup>
 	import {ref, reactive, onMounted} from 'vue'
-	import {LocalStorage, useQuasar} from 'quasar'
+	import { useQuasar} from 'quasar'
 
 	const $q = useQuasar()
 	import {useRouter, useRoute} from 'vue-router'
@@ -79,7 +77,6 @@
 	} = import.meta.env
 
 	const { VITE_token_name } = import.meta.env
-	// console.log(VITE_token_name)
 
 	const state = reactive({
 		username: usernameDefault,
@@ -115,13 +112,10 @@
 		}
 		let req = await transport.post('/auth/token-obtain', cred, options)
 		let resp = req.data
-		// console.log(resp)
 		$q.localStorage.set(String(VITE_token_name), resp)
 		transport.authorize()
 		resp = await transport.get('me')
-		// console.log(route.query.from)
 		$q.localStorage.set('user', resp.data)
-		console.log(LocalStorage.getItem('user'))
 		// order important !!!
 		await router.replace({ path: String(route.query.from) })
 

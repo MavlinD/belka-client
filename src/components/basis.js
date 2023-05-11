@@ -1,14 +1,8 @@
-import {LocalStorage, Cookies, LoadingBar, Notify} from 'quasar'
+import {LocalStorage, LoadingBar, Notify} from 'quasar'
 
 const { VITE_token_name } = import.meta.env
 
-export function goToArticle(router, slug) {
-	router.push({ name: 'article', params: { slug: slug } })
-}
-
 export const logout = () => {
-	// console.log('remove ' + VITE_token_name)
-	// Cookies.remove(VITE_token_name, { path: '/' })
 	LocalStorage.remove('user')
 	LocalStorage.remove(VITE_token_name)
 	document.location.reload()
@@ -40,19 +34,17 @@ export const myNotify = error => {
 	console.log(error.config)
 	loadingBarStop()
 	// выйдем если сервер перестал удостоверять пользователя
-	if (status == 401) {
+	if (status === 401) {
 		console.log('logout')
 		logout()
 	}
 }
 
 export function loadingBarStart() {
-	// console.log('start '.repeat(5))
 	LoadingBar.start()
 }
 
 export function loadingBarStop() {
-	// console.log('stop '.repeat(5))
 	LoadingBar.stop()
 }
 

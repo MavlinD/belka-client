@@ -58,8 +58,10 @@
 	import {computed} from 'vue'
 	import {useStore} from 'vuex'
 	import {logout} from '@/components/basis'
+	import {useQuasar} from 'quasar'
 
 	const { VITE_app_name } = import.meta.env
+	const $q = useQuasar()
 
 	let store=useStore()
 
