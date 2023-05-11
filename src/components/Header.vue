@@ -13,7 +13,7 @@
 			<router-link :to="{name:'home'}" class="text-decoration-none">
 				<q-btn v-if="$q.screen.gt.xs" flat no-caps no-wrap class="q-ml-xs">
 					<q-icon name="star_rate" color="grey" size="28px" />
-					<q-toolbar-title shrink class="text-weight-bold">
+					<q-toolbar-title shrink class="text-weight-bold text-grey">
 						{{VITE_app_name}}
 					</q-toolbar-title>
 				</q-btn>

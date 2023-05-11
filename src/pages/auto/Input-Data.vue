@@ -2,9 +2,10 @@
 	<layout>
 		<q-page class="q-px-lg">
 			<div class="row">
-				<div class="col-5">
+				<div class="col-9">
 				<h3 class="q-ml-xl text-primary">Ввод данных</h3>
 				<p class="q-ml-xl text-primary">Ожидаемый формат даты-времени:
+					<br>
 					<strong>DD.MM.YYYY</strong> или
 					<strong>DD.MM.YYYY hh:mm</strong>
 				</p>

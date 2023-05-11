@@ -41,10 +41,10 @@ export class Transport {
 	}
 
 	@trycatch(myNotify)
-	async get(arg) {
+	async get(url, arg) {
 		// console.log(arg)
 		this.before()
-		let resp = await this.transport.get(arg)
+		let resp = await this.transport.get(url, arg)
 		this.after()
 		return resp
 	}
