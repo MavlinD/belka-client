@@ -35,55 +35,16 @@ let meta = {
 
 const routes = Object.keys(pages).map((path) => {
 	const name = path.match(/\.\/pages(.*)\.vue$/)[1].toLowerCase().slice(1,).split('/')[1]
-	// console.log(name)
 	return {
 		path: name === 'home' ? '/' : '/' + name,
 		name,
-		component: pages[path], // () => import('./pages/*.vue')
+		component: pages[path],
 		meta: meta[name],
 	}
 })
 
-// https://tproger.ru/articles/routing-in-vue/
-// https://paths.esm.dev/?p=AAMeJSyAwR4UbFDAFxAcAGAIJXMAAA..
-
 // 404 страница
 routes.push(
-	{
-		name: 'article',
-		path: '/article/:slug',
-		props: true,
-		meta: {
-			requiresAuth: true,
-		},
-		component: () => import('./pages/Article.vue'),
-	},
-	{
-		name: 'category',
-		path: '/category/:slug',
-		props: true,
-		meta: {
-			requiresAuth: true,
-		},
-		component: () => import('./pages/Category.vue'),
-	},
-	{
-		name: 'article-edit',
-		path: '/article/edit/:slug',
-		props: true,
-		meta: {
-			requiresStaff: true,
-		},
-		component: () => import('./pages/ArticleEdit.vue'),
-	},
-	{
-		name: 'article-add',
-		path: '/article/add',
-		meta: {
-			requiresStaff: true,
-		},
-		component: () => import('./pages/ArticleAdd.vue'),
-	},
 	{
 		path: '/:catchAll(.*)*',
 		meta: {
@@ -108,11 +69,9 @@ export function routerGuard(router, store) {
 		const canAccess = await canUserAccess(to, from)
 
 		if (canAccess) {
-			// console.log('can access')
 			middlewarePipeline(context, middleware)
 			next()
 		} else {
-			// console.log('cant access')
 			// редиректим на стр логина если адрес требует авторизации
 			next({ name: 'login', query: { from: to.fullPath } })
 		}
